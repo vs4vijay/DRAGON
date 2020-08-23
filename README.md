@@ -16,13 +16,34 @@ mvn spring-boot:run
 gradle bootRun
 ```
 
+- Application is running on: http://localhost:8888/dragons 
+- H2 Console is running on: http://localhost:8888/h2-console 
+
+---
+
+### Development Notes
+
 ```shell
 
 
-curl localhost:8080/dragons
+curl localhost:8888/dragons
 
-curl -H 'Content-Type: application/json' -d '{"name": "vijay", "power": "fire"}' localhost:8080/dragons
+curl -H 'Content-Type: application/json' -d '{"name": "vijay", "power": "fire"}' localhost:8888/dragons
 
 export MAVEN_OPTS=-Xmx1024m
+
+
+@RepositoryRestResource(path = "students", collectionResourceRel = "students")
+
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+# Change H2 Storage
+spring.datasource.url=jdbc:h2:file:/data/demo
+
 
 ```
