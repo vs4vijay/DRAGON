@@ -9,7 +9,11 @@ mvn install
 ## Running
 
 ```shell
-mvn boot:run
+# For Maven based project
+mvn spring-boot:run
+
+# For Gradle based project
+gradle bootRun
 ```
 
 ```shell
@@ -18,5 +22,7 @@ mvn boot:run
 curl localhost:8080/dragons
 
 curl -H 'Content-Type: application/json' -d '{"name": "vijay", "power": "fire"}' localhost:8080/dragons
+
+export MAVEN_OPTS=-Xmx1024m
 
 ```
