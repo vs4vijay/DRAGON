@@ -21,6 +21,17 @@ gradle bootRun
 
 ---
 
+## Packaging
+
+```shell
+mvn clean install
+
+# *.jar file will be in ./target folder
+# java -jar dragon-*.jar
+```
+
+---
+
 ### Development Notes
 
 ```shell
